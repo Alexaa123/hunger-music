@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_698892_qyuwrkpm9w45cdi.css">
+    <title>Document</title>
+    <style>
+        main ,.wholePage, body,html {
+            height: 100%;
+            width: 100%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font: 20vh/1.5;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .page-left figure {
+            width: 40vh;
+            height: 40vh;
+            background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3546122191,1230618280&fm=200&gp=0.jpg) no-repeat center center;
+            background-size: cover;
+        }
+        .main-page {
+            height: calc(100% - 24vh);
+            display: flex;
+        }
+        .backgroundend {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3546122191,1230618280&fm=200&gp=0.jpg) no-repeat center center;
+            background-size: cover;
+            filter: blur(3px);
+            opacity: 0.7;
+        }
+        .wholePage {
+            position: relative;
+        }
+        .page-left {
+            width: 40vh;
+            height: 100%;
+            margin-left: 30vh;
+            margin-top: 20vh;
+        }
+        .start {
+            display: flex;
+            margin-left: 4vh;
+            margin-top: 3vh;
+        }
+        .start .iconfont {
+            position: relative;
+            z-index: 1;
+            flex:1 ;
+            font-size: 5vh;
+            
+        }
+        .start .iconfont:hover{
+            color: white;
+        }
+        .page-right {
+            height: 100%;
+            width: 60vh;
+            margin-left: 20vh;
+            margin-top: 20vh;
+        }
+        .songname span {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 1vh 2vh;
+            background-color: green;
+           
+        }
+        .songname p {
+            position: relative;
+            z-index: 1;
+            padding-top: 5vh;
+            font-size: 5vh;
+            color: white;
+        }
+        .likeNumber .iconfont {
+            position: relative;
+            z-index: 1;
+            margin-right: 5vh;
+        }
+        .likeNumber {
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+        }
+        .likeNumber .iconfont {
+            font-size: 3vh
+        }
+        .likeNumber span{
+            font-size: 3vh;
+        }
+        .like .wholetime {
+            display: block;
+            width: 50vh;
+            height: 0.8vh;
+            border: 0.2vh solid black;
+            margin-top: 1vh;
+            border-radius: 0.3vh
+        }
+        .like {
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+        .like .currenttime {
+            display: block;
+            width: 30vh;
+            height: 0.8vh;
+            border: 0.2vh solid black;
+            position: absolute;
+            top: 0;
+            left:0;
+            margin-top: 1vh;
+            background-color: white;
+            border-radius: 0.3vh
+
+        }
+        .page-right h5 {
+            position: relative;
+            padding-top: 2vh;
+            font-size: 4vh;
+            padding-bottom: 2vh;
+            color: white;
+            z-index: 1
+        }
+        .choosePage-content {
+            position: relative;
+            display: flex;
+            z-index: 1;
+            height: 24vh;
+            width: 160vh;
+            margin: 0 auto;
+           
+        }
+        .choosePage-content > div > span {
+            display: block;
+            width: 13vh;
+            height: 13vh;
+            background-size: cover;
+            background: no-repeat;
+        }
+        .choosePage-content > div {
+            margin-left: 15vh;
+            margin-top: 5vh;
+            text-align: center;
+            color: white;
+        }
+        .choose-page {
+            position: relative;
+            z-index: 1;
+        }
+        .choose-page .icon-pre {
+            position: absolute;
+            font-size: 12vh;
+            top:0;
+            left: 10vh;
+           
+
+        }
+        .choose-page .icon-next {
+            position: absolute;
+            font-size: 12vh;
+            top:0;
+            right: 10vh;
+        }
+        .choose-page .icon-pre:hover{
+            color: white;
+        }
+        .choose-page .icon-next:hover{
+            color: white;
+        }
+
+
+        
+       
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class = 'wholePage'>
+        <main class = 'main-page'>
+            <div class = 'page-left'>
+                <figure></figure>
+                <div class = 'start'>
+                    <span class = 'iconfont icon-like'></span>
+                    <span class = 'iconfont icon-pause'></span>
+                    <span class = 'iconfont icon-nextsong'></span>
+                </div>
+
+            </div>
+            <div class = 'page-right'>
+                <div class = 'songname'>
+                        <span>90后</span>
+                        <p>it's a new day</p>
+                </div>
+                <div class = 'likeNumber'>
+                    <span class = 'iconfont icon-listen'>3333</span>
+                    <span class = 'iconfont icon-like'>128</span>
+                    <span class = 'iconfont icon-good'>20</span>
+                </div>
+                <div class = 'like'>
+                    <span class = 'wholetime'></span>
+                    <span class = 'currenttime'></span>
+                    <p>1:02</p>   
+                </div>
+                <h5>周杰伦</h5>
+                <p>hello world</p>
+            </div>
+        </main> 
+        <footer class = 'choose-page'>
+            <div class = 'choosePage-content'>
+            <div>
+                <span style='background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3546122191,1230618280&fm=200&gp=0.jpg);background-size:cover'></span>
+                <p>漫步春天</p>
+            </div>
+            <div>
+                <span style='background:url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2661610396,1390676920&fm=200&gp=0.jpg);background-size:cover'></span>
+                <p>秋日私语</p>
+            </div>
+            <div>
+                <span style='background:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3144886122,456810977&fm=27&gp=0.jpg);background-size:cover'></span>
+                <p>温暖冬日</p>
+            </div>
+            <div>
+                <span style='background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=95795386,954999321&fm=27&gp=0.jpg);background-size:cover'></span>
+                <p>热歌</p>
+            </div>
+        </div>
+        <div class = 'pageSwitch'>
+            <span class = 'iconfont icon-pre'></span>
+            <span class = 'iconfont icon-next'></span>
+
+        </div>
+            
+        </footer>
+        <div class='backgroundend'> </div>
+
+
+    </div>
+    
+
+
+
+
+</body>
+</html>
