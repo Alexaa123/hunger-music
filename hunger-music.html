@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = 'referrer' content = 'never'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_698892_qyuwrkpm9w45cdi.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        main ,.wholePage, body,html {
+            height: 100%;
+            width: 100%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font: 20vh/1.5;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .page-left figure {
+            width: 40vh;
+            height: 40vh;
+            background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3546122191,1230618280&fm=200&gp=0.jpg) no-repeat center center;
+            background-size: cover;
+        }
+        .main-page {
+            height: calc(100% - 24vh);
+            display: flex;
+        }
+        .backgroundend {
+            position: absolute;
+            z-index:-1;
+            right: -2px;
+            bottom: -2px;
+            top: -2px;
+            left: -2px;
+            background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3546122191,1230618280&fm=200&gp=0.jpg) no-repeat center center;
+            background-size: cover;
+            filter: blur(4px);
+        }
+        .wholePage {
+            position: relative;
+        }
+        .page-left {
+            width: 40vh;
+            height: 100%;
+            margin-left: 30vh;
+            margin-top: 20vh;
+        }
+        .start {
+            display: flex;
+            margin-left: 4vh;
+            margin-top: 3vh;
+        }
+        .start .iconfont {
+            position: relative;
+            z-index: 1;
+            flex:1 ;
+            font-size: 5vh;
+            
+        }
+        .start .iconfont:hover{
+            color: white;
+        }
+        .page-right {
+            height: 100%;
+            width: 60vh;
+            margin-left: 20vh;
+            margin-top: 20vh;
+        }
+        .songname span {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 1vh 2vh;
+            background-color: green;
+           
+        }
+        .songname p {
+            position: relative;
+            z-index: 1;
+            padding-top: 5vh;
+            font-size: 5vh;
+            color: white;
+        }
+        .likeNumber .iconfont {
+            position: relative;
+            z-index: 1;
+            margin-right: 5vh;
+        }
+        .likeNumber {
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+        }
+        .likeNumber .iconfont {
+            font-size: 3vh
+        }
+        .likeNumber span{
+            font-size: 3vh;
+        }
+        .like .wholetime {
+            display: block;
+            width: 50vh;
+            height: 0.8vh;
+            border: 0.2vh solid black;
+            margin-top: 1vh;
+            border-radius: 0.3vh
+        }
+        .like {
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+        .like .currenttime {
+            display: block;
+            width: 0;
+            height: 0.8vh;
+            border: 0.2vh solid black;
+            position: absolute;
+            top: 0;
+            left:0;
+            margin-top: 1vh;
+            background-color: white;
+            border-radius: 0.3vh;
+            transition: width .5s;
+
+        }
+        .page-right h5 {
+            position: relative;
+            padding-top: 2vh;
+            font-size: 4vh;
+            padding-bottom: 2vh;
+            color: white;
+            z-index: 1
+        }
+        .choosePage-content {
+            position: relative;
+            height: 24vh;
+            width: 75%;
+            margin: 0 auto;
+            overflow: hidden;
+
+
+        }
+        .choosePage-whole {
+            position: absolute;
+            display: flex;
+            z-index: 1;
+            height: 24vh;
+            margin: 0 auto;
+           
+        }
+        .choosePage-whole > div > span {
+            display: block;
+            width: 13vh;
+            height: 13vh;
+            background-size: cover;
+            background: no-repeat;
+        }
+        .choosePage-whole > div {
+             margin-left: 10vh;
+            margin-top: 5vh;
+            text-align: center;
+            color: white;
+        }
+        .choosePage-whole > div.active {
+            box-shadow: 0 0 .5vh .5vh rgba(255,255,255,0.2);
+        }
+       
+        .choose-page {
+            position: relative;
+            z-index: 1;
+            background:rgba(255,255,255,0.2);
+            overflow: hidden;
+          
+        }
+        .choose-page .icon-pre {
+            position: absolute;
+            font-size: 12vh;
+            top:0;
+            left: 10vh;
+           
+
+        }
+   
+        .choose-page .icon-next {
+            position: absolute;
+            font-size: 12vh;
+            top:0;
+            right: 10vh;
+        }
+        .choose-page .icon-pre:hover{
+            color: white;
+        }
+        .choose-page .icon-next:hover{
+            color: white;
+        }
+        
+
+
+        
+       
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class = 'wholePage'>
+        <main class = 'main-page'>
+            <div class = 'page-left'>
+                <figure></figure>
+                <div class = 'start'>
+                    <span class = 'icon-collect iconfont icon-like'></span>
+                    <span class = 'icon-change iconfont icon-pause'></span>
+                    <span class = 'icon-next iconfont icon-nextsong'></span>
+                </div>
+
+            </div>
+            <div class = 'page-right'>
+                <div class = 'songname'>
+                        <span>90后</span>
+                        <p>it's a new day</p>
+                </div>
+                <div class = 'likeNumber'>
+                    <span class = 'iconfont icon-listen'>3333</span>
+                    <span class = 'iconfont icon-like'>128</span>
+                    <span class = 'iconfont icon-good'>20</span>
+                </div>
+                <div class = 'like'>
+                    <span class = 'wholetime'></span>
+                    <span class = 'currenttime'></span>
+                    <p>1:02</p>   
+                </div>
+                <h5>周杰伦</h5>
+                <p>hello world</p>
+            </div>
+        </main> 
+        <footer class = 'choose-page'>
+            <div class = 'choosePage-content'>  
+                <div class = 'choosePage-whole'>
+                    <!-- <div>
+                            <span style='background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3546122191,1230618280&fm=200&gp=0.jpg);background-size:cover'></span>
+                            <p>漫步春天</p>
+                        </div>
+                        <div>
+                            <span style='background:url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2661610396,1390676920&fm=200&gp=0.jpg);background-size:cover'></span>
+                            <p>秋日私语</p>
+                        </div>
+                        <div>
+                            <span style='background:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3144886122,456810977&fm=27&gp=0.jpg);background-size:cover'></span>
+                            <p>温暖冬日</p>
+                        </div>
+                        <div>
+                            <span style='background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=95795386,954999321&fm=27&gp=0.jpg);background-size:cover'></span>
+                            <p>热歌</p>
+                        </div> -->
+
+                </div> 
+           
+       
+        </div>
+        <div class = 'pageSwitch'>
+            <span class = 'iconfont icon-pre'></span>
+            <span class = 'iconfont icon-next'></span>
+
+        </div>
+            
+        </footer>
+        <div class='backgroundend'> </div>
+
+
+    </div>
+
+
+
+
+    <script>
+        var EventCenter = {
+    on: function(type,handler){
+        $(document).on(type,handler)
+    },
+    fire: function(type,data){
+        $(document).trigger(type,data)
+    }
+}
+
+    var Footer = {
+        init: function(){
+            this.$footer = $('footer')
+            this.$pageWhole = this.$footer.find('.choosePage-whole')
+            this.wholeWidth = this.$footer.find('.choosePage-content').width()
+            this.aloneWidth = this.$footer.find('.choosePage-whole>div').outerWidth(true)
+            this.istoEnd = false
+            this.istoStart = true
+            this.isAnimate = false
+            this.bind()
+            this.render()
+
+        },
+        bind: function(){
+            var _this = this
+           
+          
+                this.$footer.find('.icon-next').on('click',function(){
+                    if(_this.isAnimate)return
+                var changLength = Math.floor(_this.wholeWidth/_this.aloneWidth) 
+                if(!_this.istoEnd){
+                    _this.isAnimate = true
+                    _this.$pageWhole.animate({
+                    left: '-='+ (changLength * _this.aloneWidth ) 
+                    },400)
+                    _this.isAnimate = false
+                    _this.istoStart = false     
+                    if(parseFloat(_this.wholeWidth) - parseFloat(_this.$pageWhole.css('left')) >= parseFloat(_this.$pageWhole.width())){
+                        _this.istoEnd = true  
+                              
+                }
+                }              
+            })
+            this.$footer.find('.icon-pre').on('click',function(){
+                if(_this.isAnimate) return
+                var changLength = Math.floor(_this.wholeWidth/_this.aloneWidth) 
+                if(!_this.istoStart){
+                    _this.isAnimate = true
+                    _this.$pageWhole.animate({
+                    left: '+='+ (changLength * _this.aloneWidth ) 
+                    },400)
+                    _this.isAnimate = false
+                    console.log(parseFloat(_this.wholeWidth), parseFloat(_this.$pageWhole.css('left')),parseFloat(_this.$pageWhole.width()))
+                    _this.istoEnd = false       
+                    if( parseFloat(_this.$pageWhole.css('left')) + changLength * _this.aloneWidth >=0) {
+                        _this.istoStart = true
+                        console.log(_this.istoStart)
+                             
+                }
+                }              
+            })
+            this.$footer.on('click','.choosePage-whole >div',function(){
+                $(this).addClass('active')
+                       .siblings().removeClass('active')
+
+                EventCenter.fire('select-album',{channelID:$(this).attr('data-channel-ID'),
+                                                 channelName:$(this).attr('data-channel-name')})
+            })
+
+            
+               
+           
+          
+           
+
+        },
+        render: function(){
+            _this = this
+            $.getJSON('http://api.jirengu.com/fm/getChannels.php')
+            .done(function(ret){
+                _this.renderFooter(ret.channels)
+
+            }).fail(function(){
+                console.log('error')
+            })
+
+        },
+        renderFooter: function(channels){
+            console.log(channels)
+            var html = ''
+            channels.forEach(function(channel){
+                html += '<div data-channel-ID = '+channel.channel_id+' data-channel-name ='+channel.name +'>'
+                + '<span style=background:url('+ channel.cover_middle+');background-size:cover>'
+                + '</span> <p>'+ channel.name + '</p> </div>'      
+            })
+            this.$footer.find('.choosePage-whole').html(html)
+            this.setStyle()
+
+        },
+        setStyle: function(){
+            var count = this.$footer.find('.choosePage-whole > div').length
+            var width = this.$footer.find('.choosePage-whole > div').outerWidth(true)
+            this.$footer.find('.choosePage-whole').css({
+                width: count*width + 'px'
+
+            })
+        }
+    }
+    Footer.init()
+    
+
+    var FM = {
+        init: function(){
+            this.$container = $('.main-page')
+            this.audio = new Audio()
+            this.audio.autoplay = true
+            this.bind()
+
+
+        },
+        bind: function(){
+            var _this = this
+            EventCenter.on('select-album',function(e,channelObj){
+                _this.channelID = channelObj.channelID
+                _this.channelName = channelObj.channelName
+
+            _this.loadMusic()
+    })
+            $('.icon-change').on('click',function(){
+                var $btn = $(this)
+                if($btn.hasClass('icon-pause')){
+                    $btn.removeClass('icon-pause').addClass('icon-play')
+                    _this.audio.pause()
+                }else{
+                    $btn.removeClass('icon-play').addClass('icon-pause')   
+                    _this.audio.play()
+                }
+
+            })
+            $('.icon-next').on('click',function(){
+                _this.loadMusic()     
+            })
+            _this.audio.addEventListener('play',function(){
+                console.log('play')
+                clearInterval(_this.statusClock)
+                _this.statusClock = setInterval(function(){
+                    _this.upStatus()
+                },1000)
+            })
+            _this.audio.addEventListener('pause',function(){
+                clearInterval(_this.statusClock)
+                console.log('pause')
+            })
+
+     },
+        loadMusic: function(callback){
+            var _this = this
+            $.getJSON('http://api.jirengu.com/fm/getSong.php',{channel:this.channelID}).done(function(ret){
+                _this.song = ret['song'][0]
+                // callback()                 // 关于回调函数这一块还很不清楚
+                _this.setMusic()
+                _this.loadLyric()
+
+            })
+
+        },
+        loadLyric: function(){
+            var _this = this
+            $.getJSON('https://jirenguapi.applinzi.com/fm/getLyric.php',{sid: _this.song.sid}).done(function(ret){
+               var lyric = ret.lyric
+               var lyricObj = {}
+               lyric.split('\n').forEach(function(line){
+                   var times = line.match(/\d{2}:\d{2}/g)
+                   var str = line.replace(/\[.+?\]/g,'')
+                   if(Array.isArray(times)){
+                       times.forEach(function(time){
+                           lyricObj[time] = str
+                       })
+                   }
+               })
+               _this.lyricObj = lyricObj
+               console.log(lyricObj)
+
+        })
+    },
+        setMusic: function(){
+            console.log('set music')
+            console.log(this.song)
+            
+            this.audio.src = this.song.url
+            $('.backgroundend').css('background-image','url('+this.song.picture+')')
+            this.$container.find('.page-left figure').css('background-image','url('+ this.song.picture +')')
+            this.$container.find('.songname p').text(this.song.title)
+            this.$container.find('.page-right h5').text(this.song.artist)
+            this.$container.find('.songname span').text(this.channelName)
+            $('.icon-change').removeClass('icon-play').addClass('icon-pause')  //在使用icon的时候将play和pause弄反了
+            
+        },
+        upStatus: function(){
+            console.log('updata...')
+            var min = Math.floor(this.audio.currentTime/60)
+            var sec = Math.floor(this.audio.currentTime%60) + ''
+            sec = sec.length ===2?sec:'0'+sec
+            $('.like > p').text(min + ':' + sec)
+            $('.currenttime').css('width',this.audio.currentTime/this.audio.duration * 100+'%')
+            console.log(this.lyricObj['0'+min+':'+sec])
+            var line = this.lyricObj['0'+min+':'+sec]
+            if(line){
+                $('.page-right > p').text(line).boomText()
+            }
+          
+       
+            
+        }
+    }
+            $.fn.boomText = function(type){
+                type = type || 'rollIn'
+                console.log(type)
+                this.html(function(){
+                    var arr = $(this).text()
+                    .split('').map(function(word){
+                        return '<span class = "boomText" style="display:inline-block">'+ word +'</span>'
+                    })
+                    return arr.join('')
+                })
+                var index = 0
+                var $boomText = $(this).find('span')
+                var clock = setInterval(function(){
+                    $boomText.eq(index).addClass('animated ' + type)
+                    index++ 
+                    if(index >= $boomText.length){
+                        clearInterval(clock)
+                    }
+                },300)
+            }
+
+
+
+
+
+    FM.init()
+    
+    
+    
+    
+    
+    
+    </script>
+    
+
+
+
+
+</body>
+</html>
